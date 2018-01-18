@@ -19,7 +19,7 @@ export default function SortBy (props) {
           <option value='timestamp'>Time Posted</option>
         </select>
 
-        <i class="fa fa-sort" aria-hidden="true"></i>
+        <i className="fa  fa-sort" aria-hidden="true"></i>
       </div>
     </div>
   )

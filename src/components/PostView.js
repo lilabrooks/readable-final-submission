@@ -127,7 +127,7 @@ class PostView extends Component {
                                 <div className='btn-group v-buttons'>
 
                                     <Link to={`${post.id}/edit`} className='btn btn-secondary'>
-                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        <i className="fa  fa-pencil-square-o" aria-hidden="true"></i>
                                         Edit Post
                                     </Link>
 
@@ -135,7 +135,7 @@ class PostView extends Component {
                                         className='btn btn-danger ml-auto'
                                         onClick={this.deletePost}
                                     >
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                        <i className="fa  fa-trash-o" aria-hidden="true"></i>
                                         Delete Post
                                     </button>
                                 </div>
@@ -152,7 +152,7 @@ class PostView extends Component {
                                     className='btn btn-primary'
                                     onClick={() => this.showCommentModal()}
                                 >
-                                    <i class="fa fa-comment" aria-hidden="true"></i>
+                                    <i className="fa  fa-comment" aria-hidden="true"></i>
                                     Add Comment
                                 </button>
 
@@ -177,14 +177,14 @@ class PostView extends Component {
                                             className='btn btn-link btn-sm ml-2'
                                             onClick={() => this.editComment(comment)}
                                         >
-                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                            <i className="fa  fa-pencil-square-o" aria-hidden="true"></i>
                                             Edit
                                         </button>
                                         <button
                                             className='btn btn-link btn-sm text-danger'
                                             onClick={() => this.props.deleteComment(comment)}
                                         >
-                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            <i className="fa  fa-trash-o" aria-hidden="true"></i>
                                             Delete
                                         </button>
                                     </small>

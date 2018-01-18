@@ -33,5 +33,6 @@
   "description": "This is a simple anonymous content & comments app built with React & Redux.",
   "main": "index.js",
   "author": "Lila Brooks",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/lilabrooks/readable-final-submission"
 }

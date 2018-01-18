@@ -84,7 +84,7 @@ class PostList extends Component {
                   className='btn btn-sm btn-info'
                   to={`/${post.category}/${post.id}/edit`}
                 >
-                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                  <i className="fa  fa-pencil" aria-hidden="true"></i>
                                     Edit
                 </Link>
 
@@ -92,7 +92,7 @@ class PostList extends Component {
                   className='btn btn-sm btn-danger'
                   onClick={() => this.props.deletePost(post)}
                 >
-                  <i class="fa fa-trash" aria-hidden="true"></i>
+                  <i className="fa  fa-trash" aria-hidden="true"></i>
                                     Delete
                 </button>
 

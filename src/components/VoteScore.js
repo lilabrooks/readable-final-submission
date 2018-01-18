@@ -9,7 +9,7 @@ export default function VoteScore (props) {
         className='btn btn-sm btn-success vote-up rounded-0'
         onClick={() => props.onVoteChange('upVote')}
       >
-        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+        <i className="fa  fa-thumbs-up" aria-hidden="true"></i>
       </button>
 
       <button
@@ -17,7 +17,7 @@ export default function VoteScore (props) {
         className='btn btn-sm btn-danger vote-down rounded-0'
         onClick={() => props.onVoteChange('downVote')}
       >
-        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+        <i className="fa  fa-thumbs-down" aria-hidden="true"></i>
       </button>
 
       <h3 className='vote-score mb-0'>

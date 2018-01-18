@@ -8,7 +8,7 @@ class Categories extends Component {
       <div>
 
         <p>
-          <Link to='/' ><i class="fa fa-home" aria-hidden="true"></i>Home</Link>
+          <Link to='/' ><i className="fa  fa-home" aria-hidden="true"></i>Home</Link>
         </p>
 
         <ul className='nav flex-column mt-3'>

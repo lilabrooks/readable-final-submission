@@ -93,7 +93,7 @@ class PostEdit extends Component {
                 </h3>
 
                 <div className="cancel">
-                    <Link to='/' className='close'><i class="fa fa-close" aria-hidden="true"></i></Link>
+                    <Link to='/' className='close'><i className="fa  fa-close" aria-hidden="true"></i></Link>
                 </div>
 
                 <form onSubmit={this.handleSubmit}>
