@@ -9,6 +9,8 @@ import './index.css'
 import App from './app'
 import reducer from './reducers'
 
+
+
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(

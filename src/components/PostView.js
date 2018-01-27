@@ -174,14 +174,14 @@ class PostView extends Component {
                                     <small className='text-muted'>
                                         <PostDetails item={comment} />
                                         <button
-                                            className='btn btn-link btn-sm ml-2'
+                                            className='btn btn-link btn-sm ml-2 btn-info'
                                             onClick={() => this.editComment(comment)}
                                         >
                                             <i className="fa  fa-pencil-square-o" aria-hidden="true"></i>
                                             Edit
                                         </button>
                                         <button
-                                            className='btn btn-link btn-sm text-danger'
+                                            className='btn btn-link btn-sm text-danger btn-danger'
                                             onClick={() => this.props.deleteComment(comment)}
                                         >
                                             <i className="fa  fa-trash-o" aria-hidden="true"></i>
