@@ -8,7 +8,11 @@ class PostEdit extends Component {
         category: '',
         author: '',
         title: '',
-        body: ''
+        body: '',
+        formIsValid: false,
+        authorIsValid: false,
+        titleIsValid: false,
+        contentIsValid: false
     }
 
     componentDidMount () {
@@ -42,9 +46,15 @@ class PostEdit extends Component {
     }
 
     handleChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+
+        const name = event.target.name
+        const value = event.target.value
+
+        console.log('name is: ' + name )
+
+        this.setState({[name]: value},
+            () => { this.validateField(name, value) });
+
     }
 
     handleSubmit = event => {
@@ -55,6 +65,7 @@ class PostEdit extends Component {
 
         let id
         let postSaved
+
 
         if (this.props.post) {
             id = this.props.post.id
@@ -80,6 +91,55 @@ class PostEdit extends Component {
         this.props.history.goBack()
     }
 
+    validateField(field,value) {
+
+    let titleValid = this.state.titleIsValid
+    let authorValid = this.state.authorIsValid
+    let contentValid = this.state.contentIsValid
+
+        switch(field) {
+
+            case 'title':
+                titleValid = value.length >=4
+                console.log('title valid: ' + titleValid)
+                break
+            case 'author':
+                authorValid = value.length >=3
+                console.log('author valid: ' + authorValid)
+                break
+            case 'body':
+                contentValid = value.length >=6
+                console.log('content valid: ' + contentValid)
+                break
+            default:
+                break
+
+        }
+
+
+        let formValid = titleValid && authorValid && contentValid
+
+        this.setState({ titleIsValid: titleValid, authorIsValid: authorValid, contentIsValid: contentValid, formIsValid: formValid })
+
+
+        let titlevalid = this.state.titleIsValid ? 'YES' : 'NO'
+        let authorvalid = this.state.authorIsValid ? 'YES' : 'NO'
+        let contentvalid = this.state.contentIsValid ? 'YES' : 'NO'
+        let formvalid = this.state.formIsValid ? 'YES' : 'NO'
+
+        console.log( 'title is valid: ' + titlevalid  )
+        console.log( 'author is valid: ' + authorvalid  )
+        console.log( 'content is valid: ' + contentvalid  )
+        console.log( 'form is valid: ' + formvalid  )
+
+}
+
+
+validationError(isValid) {
+        return ( isValid ? 'd-none' : 'd-block' )
+}
+
+
     render () {
         return (
             <div className='container py-3 new-post border'>
@@ -101,7 +161,7 @@ class PostEdit extends Component {
                     {!this.props.post &&
                     <div className='form-group row'>
                         <label className='col-2 col-form-label' htmlFor='post-author'>
-                            Name
+                            Author
                         </label>
                         <div className='col-10'>
                             <input
@@ -111,9 +171,10 @@ class PostEdit extends Component {
                                 onChange={this.handleChange}
                                 type='text'
                                 className='form-control'
-                                placeholder='Name'
+                                placeholder='Author'
                             />
                         </div>
+                        <div className={`small font-italic text-danger ml-3 ${ this.validationError(this.state.authorIsValid) }`}>Must be at least 3 characters long.</div>
                     </div>
                     }
 
@@ -132,6 +193,7 @@ class PostEdit extends Component {
                                 placeholder='Title'
                             />
                         </div>
+                        <div className={`small font-italic text-danger ml-3 ${ this.validationError(this.state.titleIsValid) }`}>Must be at least 4 characters long.</div>
                     </div>
 
                     <div className='form-group row'>
@@ -148,6 +210,7 @@ class PostEdit extends Component {
                   className='form-control'
               />
                         </div>
+                        <div className={`small font-italic text-danger ml-3 ${ this.validationError(this.state.contentIsValid) }`}>Must be at least 6 characters long.</div>
                     </div>
 
                     {!this.props.post &&
@@ -175,7 +238,7 @@ class PostEdit extends Component {
 
                     <div className='row'>
                         <div className='col-10 offset-2'>
-                            <button className='btn btn-primary' type='submit'>
+                            <button className='btn btn-primary' type='submit' disabled={!this.state.formIsValid}>
                                 {
                                     this.props.post ? 'Edit' : 'Add'
                                 }
