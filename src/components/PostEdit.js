@@ -19,6 +19,7 @@ class PostEdit extends Component {
         const post = this.props.post
         if (post) {
             this.updateStateFromPost(post)
+            this.setState({ titleIsValid: true, authorIsValid: true, contentIsValid: true, formIsValid: true })
         } else {
             this.setInitialCategory(this.props.categories)
             if (this.props.match.params.id) {
