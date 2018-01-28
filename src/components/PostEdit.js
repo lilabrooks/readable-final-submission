@@ -51,8 +51,6 @@ class PostEdit extends Component {
         const name = event.target.name
         const value = event.target.value
 
-        console.log('name is: ' + name )
-
         this.setState({[name]: value},
             () => { this.validateField(name, value) });
 
@@ -102,36 +100,21 @@ class PostEdit extends Component {
 
             case 'title':
                 titleValid = value.length >=4
-                console.log('title valid: ' + titleValid)
                 break
             case 'author':
                 authorValid = value.length >=3
-                console.log('author valid: ' + authorValid)
                 break
             case 'body':
                 contentValid = value.length >=6
-                console.log('content valid: ' + contentValid)
                 break
             default:
                 break
 
         }
 
-
         let formValid = titleValid && authorValid && contentValid
 
         this.setState({ titleIsValid: titleValid, authorIsValid: authorValid, contentIsValid: contentValid, formIsValid: formValid })
-
-
-        let titlevalid = this.state.titleIsValid ? 'YES' : 'NO'
-        let authorvalid = this.state.authorIsValid ? 'YES' : 'NO'
-        let contentvalid = this.state.contentIsValid ? 'YES' : 'NO'
-        let formvalid = this.state.formIsValid ? 'YES' : 'NO'
-
-        console.log( 'title is valid: ' + titlevalid  )
-        console.log( 'author is valid: ' + authorvalid  )
-        console.log( 'content is valid: ' + contentvalid  )
-        console.log( 'form is valid: ' + formvalid  )
 
 }
 
