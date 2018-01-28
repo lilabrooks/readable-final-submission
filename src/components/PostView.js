@@ -47,7 +47,8 @@ class PostView extends Component {
             commentModalOpen: true,
             id,
             author,
-            body
+            body,
+            formIsValid: true
         })
         this.showCommentModal()
     }
@@ -66,9 +67,14 @@ class PostView extends Component {
     }
 
     handleChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+
+        const name = event.target.name
+        const value = event.target.value
+
+        this.setState({[name]: value},
+            () => { this.validateField( value) });
+
+
     }
 
     handleSaveComment = event => {
@@ -92,6 +98,19 @@ class PostView extends Component {
         }
 
         this.closeCommentModal()
+    }
+
+
+    validateField(value) {
+
+        let formValid = value.length >=6;
+
+        this.setState({ formIsValid: formValid })
+    }
+
+
+    validationError(isValid) {
+        return ( isValid ? 'd-none' : 'd-block' )
     }
 
     render () {
@@ -244,9 +263,10 @@ class PostView extends Component {
                       placeholder='Comment'
                   />
                                 </div>
+                                <div className={`small font-italic text-danger ml-3 ${ this.validationError(this.state.formIsValid) }`}>Must be at least 6 characters long.</div>
                             </div>
                             <div className='modal-footer'>
-                                <button type='submit' className='btn btn-primary'>Save</button>
+                                <button type='submit' className='btn btn-primary' disabled={!this.state.formIsValid}>Save</button>
                             </div>
                         </form>
                     </div>
