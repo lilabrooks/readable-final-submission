@@ -17,7 +17,7 @@ body {
 .navbar p { color: #fff; }
 .navbar-brand { font-size: 32px; font-weight: 600; align-items: center; }
 
-.w900p { width: 900px; }
+.w900p { width: 900px; margin-left: 25rem; }
 .w200p { width: 200px; }
 
 .badge { padding: 10px; }
@@ -35,7 +35,8 @@ body {
 .btn.btn-sm .fa { font-size: .75rem; }
 
 
-.sidebar { border: 1px solid #ced4da; box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12); margin-right: 50px; height: 220px; min-width: 100px; }
+.sidebar { border: 1px solid #ced4da; box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    margin-right: 50px; height: 220px; min-width: 100px; position: fixed; top: 85px; left: 10rem;  }
 
 .sidebar p { text-align: center; }
 

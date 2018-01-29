@@ -24,7 +24,7 @@ class Layout extends Component {
     return (
 
       <div className='flex-center row w-100 no-gutters px-0'>
-        <div className='col-1 py-3 sidebar'>
+        <div className=' py-3 sidebar'>
           <Categories />
         </div>
 
