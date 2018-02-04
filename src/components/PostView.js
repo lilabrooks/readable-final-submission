@@ -8,6 +8,7 @@ import CommentsCount from './CommentsCount'
 import PostDetails from './PostDetails'
 import SortBy from './SortBy'
 import VoteScore from './VoteScore'
+import NotFound from './NotFound'
 
 import {
     fetchPost,
@@ -137,6 +138,8 @@ class PostView extends Component {
 
     render () {
         const { post, comments } = this.props
+
+        if( post == null ) { return <NotFound/> }
 
         return (
             <div className='container py-3 post-details'>

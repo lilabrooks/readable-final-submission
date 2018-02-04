@@ -21,7 +21,6 @@ This is the final assessment project for Udacity's React&Redux course. Per proje
 
 > Here are some of improvements I can think of:
 
-> - add validation so that empty posts and comments don't get published.
 > - add more sort options (asc, desc)
 > - improve the user interface
 > - add search functionality (on posts, comments, users, date range, categories as facets)
