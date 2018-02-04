@@ -1,4 +1,8 @@
-import { RECEIVE_CATEGORIES, UPDATE_CATEGORY } from '../actions'
+
+import {
+  RECEIVE_CATEGORIES,
+  UPDATE_CATEGORY
+} from '../actions/types.js'
 
 const INITIAL_STATE = {
   list: []

@@ -1,11 +1,23 @@
 import * as API from '../utils/api'
+import {
+  RECEIVE_CATEGORIES,
+  UPDATE_CATEGORY,
+  GET_POSTS,
+  GET_POST,
+  POST_ADDED,
+  POST_UPDATED,
+  POST_DELETED,
+  UPDATE_SORT_BY,
+  GET_COMMENTS,
+  COMMENT_ADDED,
+  COMMENT_UPDATED,
+  COMMENT_DELETED,
+  UPDATE_SORT_COMMENTS_BY
+} from './types.js'
 
 // ---------------------------
 // Categories methods
 // ---------------------------
-
-export const RECEIVE_CATEGORIES = 'RECEIVE_CATEGORIES'
-export const UPDATE_CATEGORY = 'UPDATE_CATEGORY'
 
 export const receiveCategories = categories => ({
   type: RECEIVE_CATEGORIES,
@@ -26,13 +38,6 @@ export const updateCategory = category => ({
 // ---------------------------
 // Posts methods
 // ---------------------------
-
-export const GET_POSTS = 'GET_POSTS'
-export const GET_POST = 'GET_POST'
-export const POST_ADDED = 'POST_ADDED'
-export const POST_UPDATED = 'POST_UPDATED'
-export const POST_DELETED = 'POST_DELETED'
-export const UPDATE_SORT_BY = 'UPDATE_SORT_BY'
 
 export const getPosts = posts => ({
   type: GET_POSTS,
@@ -105,12 +110,6 @@ export const updateSortBy = sortBy => ({
 // ---------------------------
 // Comments methods
 //
-
-export const GET_COMMENTS = 'GET_COMMENTS'
-export const COMMENT_ADDED = 'COMMENT_ADDED'
-export const COMMENT_UPDATED = 'COMMENT_UPDATED'
-export const COMMENT_DELETED = 'COMMENT_DELETED'
-export const UPDATE_SORT_COMMENTS_BY = 'UPDATE_SORT_COMMENTS_BY'
 
 export const receiveComments = (postId, comments) => ({
   type: GET_COMMENTS,

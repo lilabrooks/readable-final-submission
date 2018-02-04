@@ -7,7 +7,7 @@ import {
   COMMENT_UPDATED,
   COMMENT_DELETED,
   UPDATE_SORT_COMMENTS_BY
-} from '../actions'
+} from '../actions/types.js'
 
 const INITIAL_STATE = {
   byId: {},

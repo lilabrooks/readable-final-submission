@@ -8,7 +8,7 @@ import {
   POST_UPDATED,
   POST_DELETED,
   UPDATE_SORT_BY
-} from '../actions'
+} from '../actions/types.js'
 
 const INITIAL_STATE = {
   byId: {},
