@@ -42,6 +42,8 @@ class PostList extends Component {
           </form>
         </div>
 
+        {/* instead of mapping this.props.post directly ..... ? */}
+
         {this.validPosts(this.props.posts).map(post => (
           <div className='post-item media my-4 border border-light' key={post.id}>
 
