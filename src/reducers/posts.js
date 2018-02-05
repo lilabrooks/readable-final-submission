@@ -22,7 +22,7 @@ export default function reducer (state = INITIAL_STATE, action) {
         ...state,
         byId: {
           ...state.byId,
-          ...keyBy(action.posts.filter(post => !!post.id), 'id')
+          ...keyBy(action.posts.filter(post => post.id), 'id')
           // [action.posts.id]: action.posts
         }
       }
