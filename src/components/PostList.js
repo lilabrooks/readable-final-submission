@@ -24,6 +24,10 @@ class PostList extends Component {
     }
   }
 
+  validPosts (posts) {
+    return posts.filter((post) => post.id != null)
+  }
+
   render () {
     return (
       <div>
@@ -38,7 +42,7 @@ class PostList extends Component {
           </form>
         </div>
 
-        {this.props.posts.map(post => (
+        {this.validPosts(this.props.posts).map(post => (
           <div className='post-item media my-4 border border-light' key={post.id}>
 
             <VoteScore
