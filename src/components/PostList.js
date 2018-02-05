@@ -96,7 +96,7 @@ class PostList extends Component {
 
                 <button
                   className='btn btn-sm btn-danger'
-                  onClick={() => this.props.deletePost(post)}
+                  onClick={() => { if (window.confirm('Are you sure you want to delete this post?')) this.props.deletePost(post) }}
                 >
                   <i className="fa  fa-trash" aria-hidden="true"></i>
                                     Delete

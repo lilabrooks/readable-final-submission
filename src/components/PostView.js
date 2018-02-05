@@ -177,7 +177,8 @@ class PostView extends Component {
 
                                     <button
                                         className='btn btn-danger ml-auto'
-                                        onClick={this.deletePost}
+                                       // onClick={this.deletePost}
+                                        onClick={() => { if (window.confirm('Are you sure you want to delete this post?')) this.props.deletePost(post) } }
                                     >
                                         <i className="fa  fa-trash-o" aria-hidden="true"></i>
                                         Delete Post
@@ -226,7 +227,7 @@ class PostView extends Component {
                                         </button>
                                         <button
                                             className='btn btn-link btn-sm text-danger btn-danger'
-                                            onClick={() => this.props.deleteComment(comment)}
+                                            onClick={() => { if (window.confirm('Are you sure you want to delete this comment?')) this.props.deleteComment(comment) } }
                                         >
                                             <i className="fa  fa-trash-o" aria-hidden="true"></i>
                                             Delete
