@@ -112,7 +112,7 @@ function mapStateToProps ({ category, posts, comments }) {
 
   return {
     category: category.active,
-    posts: sortBy(filteredPosts, post => post[posts.sortBy]),
+    posts: sortBy(filteredPosts, post => -post[posts.sortBy]),
     commentsCount: countBy(comments.byId, 'parentId'),
     sortBy: posts.sortBy
   }
